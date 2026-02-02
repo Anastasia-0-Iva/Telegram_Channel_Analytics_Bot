@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "Telegram_Channel_Analytics_Bot"
+version = "1.0.0"
+description = "A professional platform for analyzing Telegram channels, designed as a Telegram bot"
+authors = ["Anastasia Iva <Vatson.1604@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+telethon = "^1.34.0"
+nest-asyncio = "^1.6.0"
+python-dateutil = "2.8.2"
+pytz = "2023.3"
+pyTelegramBotAPI = "4.30.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
