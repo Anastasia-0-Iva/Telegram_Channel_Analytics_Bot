@@ -271,9 +271,15 @@ def conclusion(channel, days):
         if subscribers:
             # Рассчитываем среднюю охватность
             avg_views = sum(p['views'] for p in stats) / len(stats)
-            reach_percent = (avg_views / subscribers) * 100
-            lines.append(f"\nОХВАТ: {avg_views:.0f} просмотров в среднем")
-            lines.append(f"- Это {reach_percent:.1f}% от аудитории")
+            # Виральный охват
+            if avg_views > subscribers:
+                reach_percent = (avg_views / subscribers) * 100
+                lines.append(f"\nСредние просмотры ({avg_views:.0f}) БОЛЬШЕ чем подписчики ({subscribers:,})!")
+                lines.append(f"Виральный охват: {reach_percent:.0f}% ")
+            else:
+                reach_percent = (avg_views / subscribers) * 100
+                lines.append(f"\nОХВАТ: {avg_views:.0f} просмотров в среднем")
+                lines.append(f"- Это {reach_percent:.1f}% от аудитории")
 
     loop.run_until_complete(analyze())
 
