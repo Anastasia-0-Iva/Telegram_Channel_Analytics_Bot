@@ -4,7 +4,6 @@ from telethon import TelegramClient
 from telethon.tl.functions.channels import GetFullChannelRequest
 from datetime import datetime, timedelta, timezone
 from config import API_ID, API_HASH
-   #  @nordfilnews
 
 class ChannelAnalyzer:
     def __init__(self, client):
